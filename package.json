@@ -6,10 +6,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf build && next export && mv ./out ./build",
+    "build": "rm -rf build && next build && mv ./out ./build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "deploy": "yarn build && npx vercel ./build --yes --no-clipboard",
+    "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN"
   },
   "dependencies": {
     "next": "^14.1.2",
