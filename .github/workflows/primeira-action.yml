@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    types: [opened, synchronize]
 # Define o tipo de trabalho que o workflow irá executar
 jobs:
   exemplo: #Job: Exemplo
