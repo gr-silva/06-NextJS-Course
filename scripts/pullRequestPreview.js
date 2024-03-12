@@ -1,4 +1,4 @@
-import { execSync } from "child_process";
+const { execSync } = require("child_process");
 
 console.log("[DEPLOY_PREVIEW]: START");
 const command = "yarn deploy:staging ";
