@@ -1,5 +1,6 @@
 {
   "name": "06-NextJS-Course",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Gabriel Rocha <gabriel@t2tsolucoes.com>",
@@ -11,7 +12,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "deploy": "yarn build && npx vercel ./build --yes --no-clipboard",
-    "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN",
+    "deploy:prod": "yarn deploy:staging --token=$VERCEL_TOKEN",
+    "deploy:staging": "yarn deploy --token=$VERCEL_TOKEN",
     "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "dependencies": {
