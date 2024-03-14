@@ -12,11 +12,9 @@ console.log(`You can see the deploy preview on: ${DEPLOY_URL}`);
 // ===========================================
 // ===========================================
 
-console.log("[GITHUB_COMMENT]: START");
-
 const { GITHUB_REPOSITORY, GITHUB_PR_NUMBER, GITHUB_TOKEN } = process.env;
 const GH_COMMENT = `
-- Deploy URL: [${vercelUrl}](${vercelUrl})
+- Deploy URL: [${DEPLOY_URL}](${DEPLOY_URL})
 `;
 const defaultHeaders = {};
 defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
@@ -48,5 +46,3 @@ fetch(
   .finally(() => {
     console.log("[COMMENT_ON_GITHUB]: END");
   });
-
-console.log("[GITHUB_COMMENT]: END");
