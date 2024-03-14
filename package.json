@@ -13,7 +13,9 @@
     "deploy": "yarn build && npx vercel ./build --yes --no-clipboard",
     "deploy:prod": "yarn deploy:staging --token=$VERCEL_TOKEN",
     "deploy:staging": "yarn deploy --token=$VERCEL_TOKEN",
-    "deploy:preview": "node ./scripts/pullRequestPreview"
+    "deploy:preview": "node ./scripts/pullRequestPreview",
+    "test:e2e:open": "cypress open",
+    "test:e2e": "cypress run --config-file=cypress.config.js"
   },
   "dependencies": {
     "next": "^14.1.2",
@@ -21,6 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "cypress": "^13.7.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.2",
     "eslint-config-prettier": "^9.1.0",
