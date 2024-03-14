@@ -37,7 +37,7 @@ fetch(
 )
   .then((response) => {
     if (response.ok) return response.json();
-    throw new Error(response.statusText);
+    throw new Error(`${response.status} - ${response.statusText}`);
   })
   .catch((err) => {
     console.log("[COMMENT_ON_GITHUB]: ERROR");
